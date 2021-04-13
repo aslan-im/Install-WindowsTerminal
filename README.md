@@ -1,4 +1,4 @@
-This script is created for cases when Microsof Store is blocked by policies, but you need to install Windows Terminal.  
+This script is created for cases when Microsoft Store is blocked by policies, but you need to install Windows Terminal.  
 Steps in script:  
 - Checking current windows build. It should be equal or above 1903  
 - Downloading and installing [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/)  
