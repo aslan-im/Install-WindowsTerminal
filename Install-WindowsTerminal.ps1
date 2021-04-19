@@ -1,5 +1,7 @@
 ﻿Write-Output "Checking windows version"
 $WindowsVersion = (Get-ComputerInfo).WindowsVersion
+$WingetUrl = 'https://github.com/microsoft/winget-cli/releases/download/v-0.2.10971-preview/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle'
+
 
 if ($WindowsVersion -lt 1903){
     Write-Error "Your windows version is $WindowsVersion, the minimal requirement is 1903. Please update your windows"
@@ -12,7 +14,7 @@ $WingetInstallerPath = "$Location\winget.appxbundle"
 
 Set-Location $Location
 
-Invoke-WebRequest -Uri 'https://github.com/microsoft/winget-cli/releases/download/v-0.2.10191-preview/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle' -OutFile $WingetInstallerPath -UseBasicParsing
+Invoke-WebRequest -Uri $WingetUrl -OutFile $WingetInstallerPath -UseBasicParsing
 if ($WingetInstallerPath) {
     Write-Output "Winget successfully downloaded. Starting installation"
 }
