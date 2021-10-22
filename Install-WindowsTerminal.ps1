@@ -1,6 +1,6 @@
 ﻿Write-Output "Checking windows version"
 $WindowsVersion = (Get-ComputerInfo).WindowsVersion
-$WingetUrl = 'https://github.com/microsoft/winget-cli/releases/download/v-0.2.10971-preview/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle'
+$WingetUrl = 'https://github.com/microsoft/winget-cli/releases/download/v1.1.12653/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'
 
 
 if ($WindowsVersion -lt 1903){
@@ -10,7 +10,7 @@ if ($WindowsVersion -lt 1903){
 Write-Output "Downloading winget installer"
 $UserName = $env:UserName
 $Location = "C:\Users\$UserName\Downloads"
-$WingetInstallerPath = "$Location\winget.appxbundle"
+$WingetInstallerPath = "$Location\winget.msixbundle"
 
 Set-Location $Location
 
